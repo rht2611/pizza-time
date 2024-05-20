@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Pizza Time</title>
+</head>
+
+<body>
+    <div class="box-layout">
+        <header class="top-header">
+            <div class="logo">
+                <a href="#"><img src="images/logo-final.png"></a>
+            </div>
+            <nav class="navigation-menu">
+                <a class="active" href="#">Home</a>
+                <a href="#">Menu</a>
+                <a href="#">Promo</a>
+                <a href="#"><i class="fa fa-search"></i></a>
+                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                <a class="btn header-btn" href="#sign-in">SIGN IN</a>
+
+            </nav>
+            <a href="#" id="hemburger"><i class="fa fa-bars" style="font-size:36px"></i></a>
+        </header>
+        <main>
+            <div class="hero-row">
+                <div class="hero-cta">
+                    <h1>Friday pizza!</h1>
+                    <h4>Time to enjoy our delicious pizza.</h4>
+                    <a class="btn" href="#">ORDER NOW</a>
+                </div>
+
+                <div class="hero-col">
+                    <div class="gradient">
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <section class="menu-section">
+            <h2>Recommended menu</h2>
+            <div class="menu-row">
+                <div class="pod">
+                    <img src="images/cheese-pizza.png">
+                    <h3>Cheese Lovers</h3>
+                    <p class="pizza-detail">Combination of Alfredo sauce and two cheeses - Romano, and Parmesan.</p>
+                    <h3 class="price-1">$20.00</h3>
+                    <form action="/action_page.php">
+                        <label for="pizza-1"></label>
+                        <select name="pizza-1" id="pizza-1">
+                            <option value="$20.00">Regular</option>
+                            <option value="$45.00">Medium</option>
+                            <option value="$55.00">Large</option>
+                        </select>
+                    </form>
+                    <a class="btn2" href="#">ADD TO CART</a>
+                </div>
+
+                <div class="pod">
+                    <img src="images/Pepperoni-pizza.png">
+                    <h3>Pepperoni Pizza</h3>
+                    <p class="pizza-detail">Pizza with homemade spicy beef sausage, garlic and much more.</p>
+                    <h3 class="price-2">$20.00</h3>
+                    <form action="/action_page.php">
+                        <label for="pizza-2"></label>
+                        <select name="pizza-2" id="pizza-2">
+                            <option value="$20.00">Regular</option>
+                            <option value="$45.00">Medium</option>
+                            <option value="$55.00">Large</option>
+                        </select>
+                    </form>
+                    <a class="btn2" href="#">ADD TO CART</a>
+                </div>
+
+                <div class="pod">
+                    <img src="images/Margherita-pizza.png">
+                    <h3>Margherita Pizza</h3>
+                    <p class="pizza-detail">Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.</p>
+                    <h3 class="price-3">$20.00</h3>
+                    <form action="/action_page.php">
+                        <label for="pizza-3"></label>
+                        <select name="pizza-3" id="pizza-3">
+                            <option value="$20.00">Regular</option>
+                            <option value="$45.00">Medium</option>
+                            <option value="$55.00">Large</option>
+                        </select>
+                    </form>
+                    <a class="btn2" href="#">ADD TO CART</a>
+                </div>
+
+            </div>
+
+
+
+        </section>
+        <!-- popup form starts -->
+        <div class="form-body">
+            <a href="#" id="close"><i class="fa fa-close" style="font-size:36px"></i></a>
+            <form action="/action_page.php">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" value="" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="phone">Phone:</label><br>
+                <input type="tel" id="phone" name="phone" required><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- popup form ends -->
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $(".header-btn").on('click', function () {
+
+                $(".form-body").show();
+
+            });
+
+            // $(document).on('click', function () {
+
+            //     $(".form-body").hide();
+
+            // });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $("#close").on('click', function () {
+
+                $(".form-body").hide();
+
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#hemburger").on('click', function () {
+                $(".navigation-menu").addClass('mobile-menu');
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#hemburger").on('click', function () {
+                $(".navigation-menu").toggle();
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#pizza-1').on('change', function () {
+                // alert(this.value);
+                var var1 = $(this).val();
+                $('.price-1').text(var1);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#pizza-2').on('change', function () {
+                // alert(this.value);
+                var var2 = $(this).val();
+                $('.price-2').text(var2);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#pizza-3').on('change', function () {
+                // alert(this.value);
+                var var3 = $(this).val();
+                $('.price-3').text(var3);
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
